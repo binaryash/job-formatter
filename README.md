@@ -69,13 +69,23 @@ A Python automation tool that fetches job postings, extracts structured data usi
     - Create a file named `job_links.txt` in the root directory.
     - Paste one job URL per line.
     - *Alternatively, use `job_links.xlsx` with a column named "URL".*
+    
+    
+    Job Links need to be in this format in `job_links.txt`. Each line corresponds to one job link.  
+    
+    ```
+    https://www.linkedin.com/jobs/view/123456789/
+    https://jobs.lever.co/company/example-role
+    https://boards.greenhouse.io/company/jobs/9876543
+    https://www.naukri.com/job-listings-example-12345
+    ```
 
 ## Usage
 
 Run the script:
 
 ```
-python job_formatter.py
+uv main.py
 ```
 
 ### Output
@@ -89,7 +99,7 @@ The script will generate an Excel file containing:
 
 ```
 job-formatter/
-├── job_formatter.py    # Main script
+├── main.py    # Main script
 ├── .env                # API keys (do not commit!)
 ├── .gitignore          # Ignored files
 ├── job_links.txt       # Input URLs
