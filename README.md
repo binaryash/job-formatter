@@ -85,7 +85,7 @@ A Python automation tool that fetches job postings, extracts structured data usi
 Run the script:
 
 ```
-uv main.py
+uv run main.py
 ```
 
 ### Output
