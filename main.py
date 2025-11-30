@@ -58,13 +58,13 @@ class Genai:
         """Extract job data from HTML."""
         system_prompt = """You are a JSON data extractor for job postings.
 
-Extract these fields from HTML:
-- company_name, role_name, experience_required, experience_type, location (with exact and city), remote, hybrid_or_flexible, match_score (1-10 based on config)
+        Extract these fields from HTML:
+        - company_name, role_name, experience_required, experience_type, location (with exact and city), remote, hybrid_or_flexible, match_score (1-10 based on config)
 
-CRITICAL: Return ONLY valid JSON. No markdown, no code blocks, no extra text.
+        CRITICAL: Return ONLY valid JSON. No markdown, no code blocks, no extra text.
 
-Format:
-{"company_name":"","role_name":"","experience_required":"","experience_type":"","location":{"exact":"","city":""},"remote":"","hybrid_or_flexible":"","match_score":0}"""
+        Format:
+        {"company_name":"","role_name":"","experience_required":"","experience_type":"","location":{"exact":"","city":""},"remote":"","hybrid_or_flexible":"","match_score":0}"""
 
         user_prompt = (
             f"HTML:\n{html}\n\nConfig:\n{json.dumps(config)}\n\nReturn JSON only:"
@@ -76,10 +76,10 @@ Format:
         """Fetch company reviews using search."""
         system_prompt = """You search and aggregate company reviews from Glassdoor, AmbitionBox, Reddit, etc.
 
-Return ONLY valid JSON. No markdown, no extra text.
+        Return ONLY valid JSON. No markdown, no extra text.
 
-Format:
-{"company_name":"","reviews":[{"source":"","rating":"","comment":"","url":""}],"aggregated_review_score":7,"summary":""}"""
+        Format:
+        {"company_name":"","reviews":[{"source":"","rating":"","comment":"","url":""}],"aggregated_review_score":7,"summary":""}"""
 
         user_prompt = f"Company: {company_name}\n\nSearch reviews and return JSON only:"
 
